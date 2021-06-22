@@ -9,12 +9,12 @@ import UIKit
 
 class MachineLearningViewController: UIViewController {
     
-    let KNN = KNNClassifier(neightbors: 3)
+    //let KNN = KNNClassifier(neightbors: 3)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        KNN.printIrisData()
+     
+        IrisDataSet.transformIrisCSVToStruct(csvName: "Iris")
     }
 
 }

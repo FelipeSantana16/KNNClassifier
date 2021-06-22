@@ -48,15 +48,17 @@ class IrisDataSet: IrisDataSetProtocol {
         return (test, train)
     }
     
-    static private func transformIrisCSVToStruct(csvName: String) -> [Iris] {
+    static public func transformIrisCSVToStruct(csvName: String) -> [Iris] {
         
         var csvToStruct = [Iris]()
         
         // Carregamos os dados em formato de string longa
-        let data = CSVLoader.loadCSV(from: csvName)
+        let csvInString = CSVLoader.loadCSV(from: csvName)
+        
+        
         
         // Dividimos os dados por linha
-        var rows = data.components(separatedBy: "\n")
+        var rows = csvInString.components(separatedBy: "\n")
         
         // Contamos o número de cabeçalhos para comparar depois
         let columnCount = rows.first?.components(separatedBy: ",").count
@@ -64,6 +66,9 @@ class IrisDataSet: IrisDataSetProtocol {
         // Removemos a linha com os nomes de cada coluna
         rows.removeFirst()
         
+        let irisData = rows.map {
+            
+        }
         // Dividimos cada linha por colunas
         for row in rows {
             let csvColumns = row.components(separatedBy: ",")
