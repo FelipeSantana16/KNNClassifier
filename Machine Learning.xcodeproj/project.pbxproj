@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3886B612267CF49A007BC5F8 /* IrisDataSetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886B611267CF49A007BC5F8 /* IrisDataSetProtocol.swift */; };
 		3886B6142680D573007BC5F8 /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886B6132680D573007BC5F8 /* MachineLearningViewController.swift */; };
 		38D29EB8267B967F007CD519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29EB7267B967F007CD519 /* AppDelegate.swift */; };
 		38D29EBA267B967F007CD519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29EB9267B967F007CD519 /* SceneDelegate.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3886B611267CF49A007BC5F8 /* IrisDataSetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisDataSetProtocol.swift; sourceTree = "<group>"; };
 		3886B6132680D573007BC5F8 /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningViewController.swift; sourceTree = "<group>"; };
 		38D29EB4267B967F007CD519 /* Machine Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Machine Learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D29EB7267B967F007CD519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				38D29ED5267CDEC0007CD519 /* CSVLoader.swift */,
 				38D29ED3267CDDD0007CD519 /* IrisModel.swift */,
 				38D29ED1267CD982007CD519 /* Iris.csv */,
-				3886B611267CF49A007BC5F8 /* IrisDataSetProtocol.swift */,
 			);
 			path = "Iris Data";
 			sourceTree = "<group>";
@@ -170,7 +167,6 @@
 			files = (
 				38D29ED6267CDEC0007CD519 /* CSVLoader.swift in Sources */,
 				38D29ED0267CD687007CD519 /* IrisDataSet.swift in Sources */,
-				3886B612267CF49A007BC5F8 /* IrisDataSetProtocol.swift in Sources */,
 				38D29EB8267B967F007CD519 /* AppDelegate.swift in Sources */,
 				38D29ECD267B97C7007CD519 /* KNNClassifier.swift in Sources */,
 				38D29ED4267CDDD0007CD519 /* IrisModel.swift in Sources */,

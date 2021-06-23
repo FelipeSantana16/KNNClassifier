@@ -7,79 +7,114 @@
 
 import Foundation
 
-class IrisDataSet: IrisDataSetProtocol {
+class IrisDataSet {
     
-    static public func getIrisDataSet() -> [Iris] {
+    
+    enum IrisSpecies: String {
+        case setosa, versicolor, virginica
         
-        let data = transformIrisCSVToStruct(csvName: "Iris")
+        static func fromString(_ s: String) -> Int {
+            switch s {
+            case IrisSpecies.setosa.rawValue: return 0
+            case IrisSpecies.versicolor.rawValue: return 1
+            case IrisSpecies.virginica.rawValue: return 2
+            default: return 0
+            }
+        }
         
-        return data
-        
+        static func fromLabel(_ l: Int) -> String {
+            switch l {
+                case 0: return IrisSpecies.setosa.rawValue
+                case 1: return IrisSpecies.versicolor.rawValue
+                case 2: return IrisSpecies.virginica.rawValue
+                default: return IrisSpecies.setosa.rawValue
+            }
+        }
     }
     
-    static public func irisTestTrainSplit(testSize: Float) -> ([Iris],[Iris]) {
-        let irisData = transformIrisCSVToStruct(csvName: "Iris")
+    static public func irisTestTrainSplit(testSize: Float) -> ([[Double]], [[Double]], [Int], [Int]) {
+        let (data, labels) = getIrisDataSet()
         
-        let sizeOfTest = Float(irisData.count) * testSize
-        
+        let sizeOfTest = Float(data.count) * testSize
+
         var testIndex: [Int] = []
         var trainIndex: [Int] = []
+
+        var train: [[Double]] = []
+        var test: [[Double]] = []
         
-        var train: [Iris] = []
-        var test: [Iris] = []
-        
+        var trainLabels: [Int] = []
+        var testLabels: [Int] = []
+
         while testIndex.count < Int(sizeOfTest) {
-            let random = Int.random(in: 0...irisData.count - 1)
-            
+            let random = Int.random(in: 0...data.count - 1)
+
             if (!testIndex.contains(random)) {
                 testIndex.append(random)
-                test.append(irisData[random])
+                test.append(data[random])
+                testLabels.append(labels[random])
             }
         }
-        
-        for i in 0...irisData.count - 1 {
-            
+
+        for i in 0...data.count - 1 {
+
             if (!testIndex.contains(i)) {
                 trainIndex.append(i)
-                train.append(irisData[i])
+                train.append(data[i])
+                trainLabels.append(labels[i])
             }
         }
-        
-        return (test, train)
+
+        return (test, train, testLabels, trainLabels)
     }
     
-    static public func transformIrisCSVToStruct(csvName: String) -> [Iris] {
+    
+    static private func getIrisDataSet() -> ([[Double]], [Int]) {
         
-        var csvToStruct = [Iris]()
+        let irisData = transformIrisCSVToArrays(csvName: "Iris")
+        
+        return irisData
+        
+    }
+    
+     static private func transformIrisCSVToArrays(csvName: String) -> ([[Double]], [Int]) {
         
         // Carregamos os dados em formato de string longa
         let csvInString = CSVLoader.loadCSV(from: csvName)
         
-        
-        
         // Dividimos os dados por linha
         var rows = csvInString.components(separatedBy: "\n")
-        
-        // Contamos o número de cabeçalhos para comparar depois
-        let columnCount = rows.first?.components(separatedBy: ",").count
         
         // Removemos a linha com os nomes de cada coluna
         rows.removeFirst()
         
-        let irisData = rows.map {
-            
-        }
-        // Dividimos cada linha por colunas
-        for row in rows {
-            let csvColumns = row.components(separatedBy: ",")
-            
-            if csvColumns.count == columnCount {
-                let irisStruct = Iris.init(raw: csvColumns)
-                csvToStruct.append(irisStruct)
-            }
-            
+        // Dividimos os dados também em colunas
+        var irisData = rows.map { row -> [String] in
+            return row.components(separatedBy: ",")
         }
         
-        return csvToStruct
+        // Removemos a linha vazia que ficava no final do arquivo
+        irisData.removeLast()
+        
+        //Separando os labels
+        let labels = irisData.map { row -> Int in
+            let label = IrisSpecies.fromString(row[5])
+            return label
+        }
+        
+        // Removemos as colunas de id e label
+        for i in 0...irisData.count - 1 {
+            irisData[i].removeFirst()
+            irisData[i].removeLast()
+        }
+        
+        let data = irisData.map{ row in
+            return row.enumerated().map {
+                Double($0.element)!
+            }
+        }
+        
+        return (data, labels)
     }
+    
 }

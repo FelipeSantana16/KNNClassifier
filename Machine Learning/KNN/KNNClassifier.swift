@@ -9,8 +9,8 @@ import Foundation
 
 class KNNClassifier {
     
-    let data: [[Double]]
-    let labels: [Int]
+    var data: [[Double]]
+    var labels: [Int]
     let nNeighbors: Int
     
     init(data: [[Double]], labels: [Int], nNeighbors: Int) {
@@ -27,8 +27,9 @@ class KNNClassifier {
         }
     }
     
-    func fit() {
-        
+    private func learn(newData: (point: [Double], label: Int)) {
+        data.append(newData.point)
+        labels.append(newData.label)
     }
     
     func predict(newPoint: [Double]) -> Int{
@@ -39,6 +40,7 @@ class KNNClassifier {
         // ver qual o label mais comum entre os k pontos(se todas forem igualmente comuns, pegar o mais próximo)
         let label = mostFrequentNeighborsLabel(closestNeighbors: closestNeighbors)
         
+        learn(newData: (newPoint, label))
         return label
     }
     
@@ -81,7 +83,7 @@ class KNNClassifier {
         var distances: [Double] = []
         
         for dimension in 0...actualPoint.count - 1 {
-            distances[dimension] = pow(actualPoint[dimension] - newPoint[dimension], 2)
+            distances.append(pow(actualPoint[dimension] - newPoint[dimension], 2))
         }
         
         return distances.reduce(0, +)
