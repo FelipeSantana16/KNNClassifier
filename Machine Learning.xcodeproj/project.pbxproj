@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3807C76F2686027100DB3AF7 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3807C76E2686027100DB3AF7 /* Metrics.swift */; };
 		3886B6142680D573007BC5F8 /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886B6132680D573007BC5F8 /* MachineLearningViewController.swift */; };
 		38D29EB8267B967F007CD519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29EB7267B967F007CD519 /* AppDelegate.swift */; };
 		38D29EBA267B967F007CD519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29EB9267B967F007CD519 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3807C76E2686027100DB3AF7 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		3886B6132680D573007BC5F8 /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningViewController.swift; sourceTree = "<group>"; };
 		38D29EB4267B967F007CD519 /* Machine Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Machine Learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D29EB7267B967F007CD519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				3886B6132680D573007BC5F8 /* MachineLearningViewController.swift */,
+				3807C76E2686027100DB3AF7 /* Metrics.swift */,
 				38D29ECE267CD669007CD519 /* Iris Data */,
 				38D29ECB267B97A9007CD519 /* KNN */,
 				38D29EB7267B967F007CD519 /* AppDelegate.swift */,
@@ -166,6 +169,7 @@
 				38D29ED0267CD687007CD519 /* IrisDataSet.swift in Sources */,
 				38D29EB8267B967F007CD519 /* AppDelegate.swift in Sources */,
 				38D29ECD267B97C7007CD519 /* KNNClassifier.swift in Sources */,
+				3807C76F2686027100DB3AF7 /* Metrics.swift in Sources */,
 				38D29EBA267B967F007CD519 /* SceneDelegate.swift in Sources */,
 				3886B6142680D573007BC5F8 /* MachineLearningViewController.swift in Sources */,
 			);
