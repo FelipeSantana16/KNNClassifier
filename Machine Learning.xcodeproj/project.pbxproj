@@ -15,7 +15,6 @@
 		38D29ECD267B97C7007CD519 /* KNNClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29ECC267B97C7007CD519 /* KNNClassifier.swift */; };
 		38D29ED0267CD687007CD519 /* IrisDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29ECF267CD687007CD519 /* IrisDataSet.swift */; };
 		38D29ED2267CD982007CD519 /* Iris.csv in Resources */ = {isa = PBXBuildFile; fileRef = 38D29ED1267CD982007CD519 /* Iris.csv */; };
-		38D29ED4267CDDD0007CD519 /* IrisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29ED3267CDDD0007CD519 /* IrisModel.swift */; };
 		38D29ED6267CDEC0007CD519 /* CSVLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D29ED5267CDEC0007CD519 /* CSVLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		38D29ECC267B97C7007CD519 /* KNNClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNNClassifier.swift; sourceTree = "<group>"; };
 		38D29ECF267CD687007CD519 /* IrisDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisDataSet.swift; sourceTree = "<group>"; };
 		38D29ED1267CD982007CD519 /* Iris.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Iris.csv; sourceTree = "<group>"; };
-		38D29ED3267CDDD0007CD519 /* IrisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisModel.swift; sourceTree = "<group>"; };
 		38D29ED5267CDEC0007CD519 /* CSVLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +87,6 @@
 			children = (
 				38D29ECF267CD687007CD519 /* IrisDataSet.swift */,
 				38D29ED5267CDEC0007CD519 /* CSVLoader.swift */,
-				38D29ED3267CDDD0007CD519 /* IrisModel.swift */,
 				38D29ED1267CD982007CD519 /* Iris.csv */,
 			);
 			path = "Iris Data";
@@ -169,7 +166,6 @@
 				38D29ED0267CD687007CD519 /* IrisDataSet.swift in Sources */,
 				38D29EB8267B967F007CD519 /* AppDelegate.swift in Sources */,
 				38D29ECD267B97C7007CD519 /* KNNClassifier.swift in Sources */,
-				38D29ED4267CDDD0007CD519 /* IrisModel.swift in Sources */,
 				38D29EBA267B967F007CD519 /* SceneDelegate.swift in Sources */,
 				3886B6142680D573007BC5F8 /* MachineLearningViewController.swift in Sources */,
 			);

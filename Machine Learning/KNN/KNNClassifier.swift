@@ -86,7 +86,9 @@ class KNNClassifier {
             distances.append(pow(actualPoint[dimension] - newPoint[dimension], 2))
         }
         
-        return distances.reduce(0, +)
+        let totalDistance = distances.reduce(0, +)
+        
+        return totalDistance.squareRoot()
         
     }
 }
