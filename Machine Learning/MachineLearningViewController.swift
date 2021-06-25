@@ -9,8 +9,6 @@ import UIKit
 
 class MachineLearningViewController: UIViewController {
     
-    //let KNN = KNNClassifier(neightbors: 3)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +33,9 @@ class MachineLearningViewController: UIViewController {
             }
         }
         
-        let confusionMatrice = Metrics.getConfusionMatrice(expected: testLabels, result: testsResults)
         accuracy /= Double(testsResults.count)
+        
+        let confusionMatrice = Metrics.getConfusionMatrice(expected: testLabels, result: testsResults)
         
         print("Acurácia Média: \n\(accuracy)")
         print("\nResultado esperado: ")

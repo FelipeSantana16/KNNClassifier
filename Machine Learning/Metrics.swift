@@ -76,7 +76,7 @@ class Metrics {
     
     public static func getAccuracy(truePositive tp: Int, trueNegative tn: Int, falsePositive fp: Int, falseNegative fn: Int) -> Double {
         
-        return (Double(tp) + Double(tn) / (Double(tp) + Double(fp) + Double(tn) + Double(fn)))
+        return (Double(tp) + Double(tn)) / (Double(tp) + Double(fp) + Double(tn) + Double(fn))
     }
 
     
